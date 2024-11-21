@@ -1,11 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
-/*
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -72,6 +67,22 @@ input, select, textarea {
 	appearance: none;
 }
 
+/*.header-title {*/
+/*	text-align: left;*/
+/*	margin: 20px 0; !* Adjust the vertical spacing (top and bottom) *!*/
+/*	padding: 0 20px; !* Adjust the horizontal spacing (left and right) *!*/
+/*}*/
+
+/*.header-bar {*/
+/*	width: calc(100% - 40px); !* Matches the horizontal padding *!*/
+/*	margin: 10px auto; !* Adjust the space between the text and the bar *!*/
+/*	height: 2px; !* Bar thickness *!*/
+/*	background: linear-gradient(90deg, #d3d3d3, #243c5a, #000000, #d3d3d3);*/
+/*	border-radius: 1px; !* Optional rounded edges *!*/
+/*}*/
+
+
+
 /* Basic */
 
 	@-ms-viewport {
@@ -98,15 +109,32 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
-		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+	/* Keyframes for smooth, multi-colored blending */
+	@keyframes gradientShift {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+	/* Apply the animated gradient to the body */
+	body {
+		background: linear-gradient(45deg, #d3d3d3, #243c5a, #000000, #d3d3d3);
+		background-size: 400% 400%; /* Larger size ensures multiple colors blend on-screen */
+		animation: gradientShift 20s ease infinite; /* Smooth, continuous animation */
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+
+
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -117,7 +145,6 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-/* Type */
 
 	body {
 		background-color: #935d8c;
@@ -2702,7 +2729,28 @@ input, select, textarea {
 	}
 
 	header.major h2:after {
-		background-color: rgba(255, 255, 255, 0.35);
+		content: '';
+		display: block;
+		width: 100%; /* Adjust the length of the bar here */
+		height: 5px; /* Adjust the thickness of the bar */
+		margin: 0.7em 0 0 0; /* Align with header text */
+		background: linear-gradient(45deg, #d3d3d3, #243c5a, #000000, #d3d3d3);
+		background-size: 400% 400%; /* Matches the body gradient size */
+		animation: gradientShift 20s ease infinite; /* Same animation as body */
+		border-radius: 2px; /* Optional: rounded edges */
+	}
+
+	/* Animation for the gradient */
+	@keyframes gradientShift {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 
 /* Table */
@@ -3542,14 +3590,6 @@ input, select, textarea {
 
 		#main dl dt {
 			color: #636363;
-		}
-
-		#main header.major h2:after {
-			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 		}
 
 		#main table tbody tr {

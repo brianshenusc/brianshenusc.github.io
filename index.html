@@ -27,8 +27,8 @@
 					<ul>
 						<li><a href="#" onclick="showSection('about-me')">About Me</a></li>
 						<li><a href="#" onclick="showSection('stock-algorithms')">Stock Algorithms</a></li>
-						<li><a href="#" onclick="showSection('sports-fitness')">Sports & Fitness</a></li>
-						<li><a href="#" onclick="showSection('hobbies')">Hobbies</a></li>
+						<li><a href="#" onclick="showSection('data-science')">Data Science Projects</a></li>
+						<li><a href="#" onclick="showSection('fitness-hobbies')">Fitness & Hobbies</a></li>
 					</ul>
 				</nav>
 
@@ -63,27 +63,54 @@
 
 
 					<!-- Stock Algorithms Section -->
-					<section id="stock-algorithms" class="main-section" style="padding: 50px; box-sizing: border-box;">
+					<section id="stock-algorithms" class="main-section" style="padding: 50px; box-sizing: border-box; display: none;">
 						<header class="major">
 							<h2>Stock Algorithms</h2>
 						</header>
-						<p>Details about your stock algorithm projects and techniques.</p>
+
+						<h3 style="font-size: 1.75em;"><em>Automated Mean Reversion Algorithm with Random Forest Classifier</em></h3>
+						<embed
+								src="https://portfolio-graph.s3.us-east-1.amazonaws.com/portfolio_graph.html"
+								width="100%"
+								height="600"
+								style="border: none; overflow: visible;">
+
+						<h3>About</h3>
+						<p>This project involves the development of an automated stock trading strategy using a Random Forest Classifier
+							integrated with a mean reversion approach. The strategy is designed to detect trading opportunities where stock
+							prices are expected to revert to their average, leveraging machine learning to identify patterns and improve
+							decision-making for profitable trades through extensive feature selection.</p>
+						<h3>Analysis (Note: The algorithm is constantly running, so these metrics are subject to change)</h3>
+						<ul>
+							<li><b>Beta:</b> The lower beta indicates that the strategy has less exposure to market volatility, suggesting reduced risk compared to the S&P500.</li>
+							<li><b>Sharpe Ratio:</b> The Sharpe ratio reflects a favorable risk-adjusted return, indicating that the strategy is efficiently balancing risk and return</li>
+							<li><b>Win Rate:</b> The high win rate demonstrates the model's effectiveness in making profitable trades.</li>
+						</ul>
+
+						<h3>Technology Used</h3>
+						<ul>
+							<li><b>Python:</b> This project was coded in a Jupyter Notebook using numpy, pandas, yfinance, scikit-learn, plotly, and alpaca_trade_api.</li>
+							<li><b>AWS:</b> The algorithm is deployed in an AWS ECR repository via Docker. It is run hourly during market hours through AWS Lambda, and trades are recorded in AWS DynamoDB. The interactive Plotly graph above is generated using these DynamoDB records and hosted on an AWS S3 bucket, which is also automatically updated hourly</li>
+							<li><b>Machine Learning:</b> The algorithm utilizes a Random Forest Classifier Model with careful feature selection, which increased the win rate from 72% to 81% when back tested.</li>
+							<li><b>Alpaca Markets:</b> This project leverages Alpaca Market's free web API to conduct latency-free trades</li>
+						</ul>
+						<h3>Github Repository: <a href="https://github.com/brianshenusc/stockalgorithm" target="_blank">View on GitHub</a></h3>
 					</section>
 
 					<!-- Sports & Fitness Section -->
-					<section id="sports-fitness" class="main-section" style="padding: 50px; box-sizing: border-box;">
+					<section id="data-science" class="main-section" style="padding: 50px; box-sizing: border-box; display: none;">
 						<header class="major">
-							<h2>Sports & Fitness</h2>
+							<h2>Data Science Projects</h2>
 						</header>
-						<p>Achievements and experiences in sports and fitness.</p>
+						<p>Highlight data science projects like AWS Glue ETL, Athena, Redshift, RDS, etc.</p>
 					</section>
 
 					<!-- Hobbies Section -->
-					<section id="hobbies" class="main-section" style="padding: 50px; box-sizing: border-box;">
+					<section id="fitness-hobbies" class="main-section" style="padding: 50px; box-sizing: border-box; display: none;">
 						<header class="major">
-							<h2>Hobbies</h2>
+							<h2>Fitness & Hobbies</h2>
 						</header>
-						<p>Details about hobbies and interests, including gaming, music, and more.</p>
+						<p>Details about hobbies and interests, including fitness, sports, music, and more.</p>
 					</section>
 				</div>
 
